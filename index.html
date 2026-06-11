@@ -3,65 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lara Kelly 💖</title>
+<title>Lara Kelly | A Film 💖</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: Arial, sans-serif;
+font-family: "Arial", sans-serif;
 }
 
 body{
 min-height:100vh;
 overflow-x:hidden;
-background: linear-gradient(-45deg,#ff2f92,#ff7ac6,#ffd1ec,#ff4fa3);
-background-size:400% 400%;
-animation:gradient 10s ease infinite;
-color:#333;
-}
-
-@keyframes gradient{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-/* brilho overlay */
-body::before{
-content:"";
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background: radial-gradient(circle at top,#ffffff55,transparent);
-pointer-events:none;
-}
-
-/* corações */
-.heart{
-position:fixed;
-top:-10px;
+background:#0b0014;
 color:white;
-font-size:14px;
+}
+
+/* fundo cinematográfico */
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background: radial-gradient(circle at top,#ff2f92 0%,transparent 60%),
+            radial-gradient(circle at bottom,#7a3bff 0%,transparent 60%);
+opacity:0.6;
+animation:move 8s infinite alternate;
+}
+
+@keyframes move{
+from{transform:scale(1);}
+to{transform:scale(1.1);}
+}
+
+/* partículas */
+.particle{
+position:fixed;
+width:4px;
+height:4px;
+background:white;
+border-radius:50%;
+opacity:0.5;
 animation:fall linear infinite;
-opacity:0.7;
 }
 
 @keyframes fall{
 to{transform:translateY(110vh);opacity:0;}
 }
 
-/* container */
+/* container estilo cinema */
 .container{
+position:relative;
 max-width:900px;
-margin:50px auto;
-background:rgba(255,255,255,0.92);
-backdrop-filter: blur(10px);
-border-radius:30px;
-padding:35px;
-box-shadow:0 30px 80px rgba(255,0,120,0.25);
-animation:fadeIn 1.5s ease;
+margin:60px auto;
+background:rgba(255,255,255,0.05);
+backdrop-filter: blur(12px);
+border-radius:25px;
+padding:40px;
+box-shadow:0 0 60px rgba(255,0,120,0.3);
+animation:fadeIn 2s ease;
 }
 
 @keyframes fadeIn{
@@ -69,28 +69,31 @@ from{opacity:0;transform:translateY(30px);}
 to{opacity:1;transform:translateY(0);}
 }
 
-/* título */
+/* título cinema */
 h1{
 text-align:center;
-font-size:40px;
-color:#ff2f92;
-text-shadow:0 5px 15px rgba(255,0,120,0.3);
+font-size:42px;
+color:#ff4fa3;
+letter-spacing:2px;
 }
 
 .subtitle{
 text-align:center;
 margin-top:10px;
-color:#7a3b5c;
+color:#ddd;
+font-style:italic;
 }
 
-/* texto */
+/* texto narrativa */
 .text{
-margin-top:25px;
-background:linear-gradient(135deg,#ffe3f3,#fff);
-padding:22px;
-border-radius:20px;
-border:2px solid #ff9ad5;
-line-height:1.6;
+margin-top:30px;
+line-height:1.8;
+font-size:16px;
+color:#eee;
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-left:3px solid #ff4fa3;
+border-radius:15px;
 }
 
 /* galeria cinema */
@@ -103,70 +106,72 @@ gap:12px;
 
 .gallery img{
 width:100%;
-height:230px;
+height:240px;
 object-fit:cover;
-border-radius:20px;
-transition:0.6s;
-box-shadow:0 15px 30px rgba(255,0,120,0.2);
+border-radius:18px;
+transition:0.5s;
+filter:brightness(0.9);
 }
 
 .gallery img:hover{
-transform:scale(1.08);
+transform:scale(1.05);
+filter:brightness(1.1);
 }
 
-/* botão cinema */
+/* botão final filme */
 .btn{
 display:block;
-margin:30px auto 0;
-padding:14px 28px;
-background:linear-gradient(135deg,#ff2f92,#ff7ac6,#ff9ad5);
+margin:35px auto 0;
+padding:14px 30px;
+background:linear-gradient(135deg,#ff2f92,#7a3bff);
 color:white;
 border:none;
-border-radius:40px;
+border-radius:50px;
 cursor:pointer;
 font-size:15px;
-box-shadow:0 15px 25px rgba(255,0,120,0.3);
 transition:0.3s;
+box-shadow:0 10px 30px rgba(255,0,120,0.3);
 }
 
 .btn:hover{
-transform:scale(1.08);
+transform:scale(1.05);
 }
 
-/* FINAL CINEMA */
-.secret{
+/* FINAL HOLLYWOOD */
+.final{
 display:none;
 position:fixed;
 top:0;left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.75);
+background:rgba(0,0,0,0.85);
 backdrop-filter: blur(10px);
 justify-content:center;
 align-items:center;
 text-align:center;
 padding:30px;
-animation:fadeIn 1s ease;
+animation:fadeIn 1.5s ease;
 }
 
-.secret-content{
+.final-box{
+max-width:600px;
 background:linear-gradient(135deg,#fff,#ffe3f3);
 padding:30px;
 border-radius:25px;
-max-width:600px;
-box-shadow:0 20px 60px rgba(255,0,120,0.3);
+color:#333;
+box-shadow:0 0 80px rgba(255,0,120,0.4);
 }
 
 .end{
-font-size:28px;
+font-size:32px;
 color:#ff2f92;
 margin-bottom:10px;
+letter-spacing:2px;
 }
 
-.final{
+.final-text{
 margin-top:15px;
-font-size:16px;
-line-height:1.6;
+line-height:1.7;
 }
 
 .close{
@@ -183,20 +188,24 @@ cursor:pointer;
 
 <body>
 
+<div class="bg"></div>
+
 <div class="container">
 
-<h1>Para Lara Kelly 💖</h1>
-<p class="subtitle">Uma amizade que sempre existiu — e ficou ainda mais forte em agosto</p>
+<h1>LARA KELLY 💖</h1>
+<p class="subtitle">A story that never really ended… it just evolved.</p>
 
 <div class="text">
-Lara, a gente já era amiga antes… e isso nunca foi pequeno pra mim.
+Lara, a gente já era amiga antes de tudo isso…  
+e isso nunca foi pequeno.
 
-A vida foi levando a gente por caminhos diferentes, mas isso nunca apagou o que existia entre nós.
+A vida levou a gente por caminhos diferentes, mudou rotina, mudou distância…  
+mas nunca mudou o que a gente era uma pra outra.
 
-Quando a gente voltou a se aproximar no ano passado, tudo só ficou mais leve e mais verdadeiro.
+E quando a gente voltou a se aproximar em agosto do ano passado,  
+eu entendi que algumas conexões não acabam — elas só amadurecem.
 
-Obrigada pela sua amizade e por todos os momentos que já passamos juntas.  
-Eu estou aqui para sempre. 💖
+Hoje, eu só sinto gratidão por você existir na minha história.
 </div>
 
 <!-- GALERIA -->
@@ -208,61 +217,60 @@ Eu estou aqui para sempre. 💖
 </div>
 
 <button class="btn" onclick="openFinal()">
-Ver final do filme 🎬💖
+Watch the final scene 🎬
 </button>
 
 </div>
 
-<!-- FINAL CINEMA -->
-<div class="secret" id="secret">
-  <div class="secret-content">
+<!-- FINAL HOLLYWOOD -->
+<div class="final" id="final">
+  <div class="final-box">
 
-    <div class="end">💖 The End 💖</div>
+    <div class="end">THE END</div>
 
-    <div class="final">
-      “Você pode ser tudo o que quiser ser…  
-      e na minha vida, você sempre vai ser alguém especial.” ✨
-
-      <br><br>
-
-      Lara Kelly, obrigada por existir na minha história,  
-      por todos os momentos e por tudo que a gente é juntas.
+    <div class="final-text">
+      “You can be anything you want to be…  
+      but in my story, you will always be someone special.” ✨
 
       <br><br>
 
-      <b>Eu estou aqui para sempre. 💛</b>
+      Lara Kelly, thank you for every moment,  
+      every memory and every version of us.
 
       <br><br>
 
-      ─ um final feliz que continua acontecendo ─
+      <b>I’m here for you. Always. 💖</b>
+
+      <br><br>
+
+      ─ a story that doesn’t end, it continues ─
     </div>
 
-    <button class="close" onclick="closeFinal()">Fechar 💌</button>
+    <button class="close" onclick="closeFinal()">Close</button>
 
   </div>
 </div>
 
 <script>
 
-/* CORAÇÕES */
-function hearts(){
-const h=document.createElement("div");
-h.classList.add("heart");
-h.innerHTML="💖";
-h.style.left=Math.random()*100+"vw";
-h.style.animationDuration=(3+Math.random()*5)+"s";
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),8000);
+/* partículas */
+function particles(){
+const p=document.createElement("div");
+p.classList.add("particle");
+p.style.left=Math.random()*100+"vw";
+p.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(p);
+setTimeout(()=>p.remove(),8000);
 }
-setInterval(hearts,250);
+setInterval(particles,200);
 
-/* FINAL */
+/* final */
 function openFinal(){
-document.getElementById("secret").style.display="flex";
+document.getElementById("final").style.display="flex";
 }
 
 function closeFinal(){
-document.getElementById("secret").style.display="none";
+document.getElementById("final").style.display="none";
 }
 
 </script>
