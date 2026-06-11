@@ -3,90 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lara Kelly 💛</title>
+<title>Lara Kelly 💖</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, sans-serif;
+}
 
 body{
-background: linear-gradient(135deg,#ffe0ec,#ffd6a5);
+min-height:100vh;
+overflow-x:hidden;
+background: linear-gradient(-45deg,#ff2f92,#ff7ac6,#ffd1ec,#ff4fa3);
+background-size:400% 400%;
+animation:gradient 10s ease infinite;
 color:#333;
 }
 
-.container{
-max-width:900px;
-margin:40px auto;
-background:white;
-padding:30px;
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
+/* brilho overlay */
+body::before{
+content:"";
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background: radial-gradient(circle at top,#ffffff55,transparent);
+pointer-events:none;
+}
+
+/* corações */
+.heart{
+position:fixed;
+top:-10px;
+color:white;
+font-size:14px;
+animation:fall linear infinite;
+opacity:0.7;
+}
+
+@keyframes fall{
+to{transform:translateY(110vh);opacity:0;}
+}
+
+/* container */
+.container{
+max-width:900px;
+margin:50px auto;
+background:rgba(255,255,255,0.92);
+backdrop-filter: blur(10px);
+border-radius:30px;
+padding:35px;
+box-shadow:0 30px 80px rgba(255,0,120,0.25);
+animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* título */
 h1{
 text-align:center;
-color:#e11d74;
-font-size:34px;
+font-size:40px;
+color:#ff2f92;
+text-shadow:0 5px 15px rgba(255,0,120,0.3);
 }
 
 .subtitle{
 text-align:center;
-color:#666;
 margin-top:10px;
+color:#7a3b5c;
 }
 
+/* texto */
 .text{
-margin-top:20px;
+margin-top:25px;
+background:linear-gradient(135deg,#ffe3f3,#fff);
+padding:22px;
+border-radius:20px;
+border:2px solid #ff9ad5;
 line-height:1.6;
-font-size:16px;
-background:#fff0f6;
-padding:20px;
-border-left:5px solid #e11d74;
-border-radius:15px;
 }
 
-/* GALERIA SIMPLES */
+/* galeria cinema */
 .gallery{
-margin-top:25px;
+margin-top:30px;
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:10px;
+gap:12px;
 }
 
 .gallery img{
 width:100%;
-height:220px;
+height:230px;
 object-fit:cover;
-border-radius:15px;
+border-radius:20px;
+transition:0.6s;
+box-shadow:0 15px 30px rgba(255,0,120,0.2);
 }
 
-/* BOTÃO */
+.gallery img:hover{
+transform:scale(1.08);
+}
+
+/* botão cinema */
 .btn{
-margin:25px auto;
 display:block;
-padding:12px 20px;
-background:#e11d74;
+margin:30px auto 0;
+padding:14px 28px;
+background:linear-gradient(135deg,#ff2f92,#ff7ac6,#ff9ad5);
 color:white;
 border:none;
-border-radius:20px;
+border-radius:40px;
 cursor:pointer;
+font-size:15px;
+box-shadow:0 15px 25px rgba(255,0,120,0.3);
+transition:0.3s;
 }
 
+.btn:hover{
+transform:scale(1.08);
+}
+
+/* FINAL CINEMA */
 .secret{
 display:none;
-margin-top:15px;
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+backdrop-filter: blur(10px);
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:20px;
-background:#ffe3f1;
-border-radius:15px;
-color:#d63384;
-font-weight:bold;
+padding:30px;
+animation:fadeIn 1s ease;
 }
 
-.footer{
-text-align:center;
+.secret-content{
+background:linear-gradient(135deg,#fff,#ffe3f3);
+padding:30px;
+border-radius:25px;
+max-width:600px;
+box-shadow:0 20px 60px rgba(255,0,120,0.3);
+}
+
+.end{
+font-size:28px;
+color:#ff2f92;
+margin-bottom:10px;
+}
+
+.final{
+margin-top:15px;
+font-size:16px;
+line-height:1.6;
+}
+
+.close{
 margin-top:20px;
-font-size:13px;
-color:#888;
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#ff2f92;
+color:white;
+cursor:pointer;
 }
 </style>
 </head>
@@ -95,15 +185,18 @@ color:#888;
 
 <div class="container">
 
-<h1>Para Lara Kelly 💛</h1>
-<p class="subtitle">Uma amizade que sempre existiu, mas ficou mais forte em agosto do ano passado</p>
+<h1>Para Lara Kelly 💖</h1>
+<p class="subtitle">Uma amizade que sempre existiu — e ficou ainda mais forte em agosto</p>
 
 <div class="text">
-Lara, a gente já era amiga antes disso tudo.  
-Mas quando eu saí da empresa da sua mãe, nossa rotina mudou e a gente acabou se afastando um pouco.
+Lara, a gente já era amiga antes… e isso nunca foi pequeno pra mim.
 
-Mesmo assim, o que a gente tinha não acabou.  
-E quando a gente voltou a se aproximar em agosto do ano passado, eu percebi que nossa amizade não tinha enfraquecido — só amadurecido.
+A vida foi levando a gente por caminhos diferentes, mas isso nunca apagou o que existia entre nós.
+
+Quando a gente voltou a se aproximar em agosto do ano passado, tudo só ficou mais leve e mais verdadeiro.
+
+Obrigada pela sua amizade e por todos os momentos que já passamos juntas.  
+Eu estou aqui para sempre. 💖
 </div>
 
 <!-- GALERIA -->
@@ -114,23 +207,65 @@ E quando a gente voltou a se aproximar em agosto do ano passado, eu percebi que 
 <img src="IMG_5186.jpeg">
 </div>
 
-<div class="text">
-Hoje eu só tenho gratidão por você ainda fazer parte da minha vida.  
-Algumas pessoas não precisam estar perto o tempo todo… só precisam ser verdadeiras.
-</div>
-
-<button class="btn" onclick="document.getElementById('secret').style.display='block'">
-Ver mensagem 💌
+<button class="btn" onclick="openFinal()">
+Ver final do filme 🎬💖
 </button>
 
+</div>
+
+<!-- FINAL CINEMA -->
 <div class="secret" id="secret">
-Lara Kelly, nossa amizade não foi sorte.  
-Foi destino insistindo em manter você na minha vida 💛
+  <div class="secret-content">
+
+    <div class="end">💖 The End 💖</div>
+
+    <div class="final">
+      “Você pode ser tudo o que quiser ser…  
+      e na minha vida, você sempre vai ser alguém especial.” ✨
+
+      <br><br>
+
+      Lara Kelly, obrigada por existir na minha história,  
+      por todos os momentos e por tudo que a gente é juntas.
+
+      <br><br>
+
+      <b>Eu estou aqui para sempre. 💛</b>
+
+      <br><br>
+
+      ─ um final feliz que continua acontecendo ─
+    </div>
+
+    <button class="close" onclick="closeFinal()">Fechar 💌</button>
+
+  </div>
 </div>
 
-<p class="footer">Feito com carinho ✨</p>
+<script>
 
-</div>
+/* CORAÇÕES */
+function hearts(){
+const h=document.createElement("div");
+h.classList.add("heart");
+h.innerHTML="💖";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),8000);
+}
+setInterval(hearts,250);
+
+/* FINAL */
+function openFinal(){
+document.getElementById("secret").style.display="flex";
+}
+
+function closeFinal(){
+document.getElementById("secret").style.display="none";
+}
+
+</script>
 
 </body>
 </html>
